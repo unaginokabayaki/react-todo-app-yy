@@ -32,6 +32,16 @@ todoSchema.statics.createDocument = function(params, callback) {
     }) 
 }
 
+todoSchema.statics.updateDocument = function(id, params, callback) {
+  return Todo.findOneAndUpdate({_id: id},
+                              {
+                                text: params.text,
+                                done: params.done
+                              }, function(err, todo) {
+                                callback(todo)
+                              })
+}
+
 const Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = Todo;
