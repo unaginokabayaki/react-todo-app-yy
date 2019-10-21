@@ -54,7 +54,7 @@ var Todo = function (_React$Component) {
       console.log("submit todo");
       var id = this.props.id;
       if (id == "" || id == undefined) {
-        fetch('http://localhost:3000/todos/', {
+        fetch('/todos/', {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -69,7 +69,7 @@ var Todo = function (_React$Component) {
           });
         });
       } else {
-        fetch("http://localhost:3000/todos/" + id, {
+        fetch("/todos/" + id, {
           method: 'put',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -117,7 +117,7 @@ var TodoList = function (_React$Component2) {
     value: function componentDidMount() {
       var _this4 = this;
 
-      fetch('http://localhost:3000/todos/').then(function (response) {
+      fetch('/todos/').then(function (response) {
         return response.json();
       }).then(function (data) {
         _this4.setState(function (state) {
