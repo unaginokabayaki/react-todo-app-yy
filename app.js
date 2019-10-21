@@ -29,7 +29,7 @@ router.route('/todos')
   })
 
 router.route(`/todos/:todo_id`)
-  .post((req, res) => {
+  .put((req, res) => {
     Todo.updateDocument(req.params.todo_id, req.body, function(data) {
       console.log(`Todo id ${data._id} updated`);
       res.json(data);
