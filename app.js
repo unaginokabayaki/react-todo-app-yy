@@ -23,7 +23,7 @@ router.route('/todos')
   })
   .post((req, res) => {
     Todo.createDocument(req.body, function(data) {
-      console.log('Todo created with id ${data._id}');
+      console.log(`Todo created with id ${data._id}`);
       res.json(data);
     })
   })
